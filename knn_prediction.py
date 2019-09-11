@@ -53,7 +53,7 @@ def getNeighbours(training_data,test_ins,k):
 
     for x in range(len(training_data)):                  #iterate each row of training_data 
         distance = euclidean_distance(test_ins,training_data[x], features)
-        distances.append((training_data,distance))
+        distances.append((training_data[x],distance))
 
     '''
     distances now contains a list of tuples where first element is the training_data row and second element is distance
