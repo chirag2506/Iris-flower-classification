@@ -74,7 +74,7 @@ def getResponseVotes(neighbours):
 
     
     for x in range(len(neighbours)):       # iterate through each neighbour
-        response = neighbours[x][-1]       # response is the last column of our dataset ('type of iris' in case of iris dataset)
+        response = neighbours[x][-1][-1]       # response is the last column of our dataset ('type of iris' in case of iris dataset)
         if response in classvotes:
             classvotes[response] +=1
         else:
