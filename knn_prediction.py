@@ -1,21 +1,8 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Sep 10 20:04:44 2019
-
-@author: Chirag Gupta
-"""
-
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Sep  1 12:53:34 2019
-
-@author: Chirag Gupta
-"""
-
 import csv
 import random
 import math
 import operator
+import sys
 
 
 
@@ -64,7 +51,7 @@ def getNeighbours(training_data,test_ins,k):
     neighbours = []
     for x in range(k):                      #append k nearest neighbours of test_data instance in list called neighbours
         neighbours.append(distances[x][0])
-
+        
     return neighbours
 
 
@@ -75,6 +62,7 @@ def getResponseVotes(neighbours):
     
     for x in range(len(neighbours)):       # iterate through each neighbour
         response = neighbours[x][-1]       # response is the last column of our dataset ('type of iris' in case of iris dataset)
+
         if response in classvotes:
             classvotes[response] +=1
         else:
@@ -93,10 +81,10 @@ def getResponseVotes(neighbours):
 
 def main():
     
-    d1 = float(input("Enter sepal length : "))
-    d2 = float(input("Enter sepal width : "))
-    d3 = float(input("Enter petal length : "))
-    d4 = float(input("Enter petal width : "))   
+    d1 = float(sys.argv[1])
+    d2 = float(sys.argv[2])
+    d3 = float(sys.argv[3])
+    d4 = float(sys.argv[4])   
     
     training_data = []
     test_data = []
